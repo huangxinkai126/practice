@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>777</width>
+    <height>496</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="labelimage1">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelimage2">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>777</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionNew_file"/>
+    <addaction name="actionSavePicture"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>图像变换</string>
+    </property>
+    <addaction name="actionTranslation"/>
+    <addaction name="actionZoom"/>
+    <addaction name="actionRotate"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>灰度处理</string>
+    </property>
+    <addaction name="actionGrayChange"/>
+    <addaction name="actionGrayLevelav"/>
+    <addaction name="actionGrayLevelrule"/>
+    <addaction name="actionGrayLevelRe"/>
+    <addaction name="actionGrayBinaryzation"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>图像平滑</string>
+    </property>
+    <widget class="QMenu" name="menu_7">
+     <property name="title">
+      <string>均值滤波</string>
+     </property>
+     <addaction name="actionFourAveFl"/>
+     <addaction name="actionEightAveFl"/>
+     <addaction name="actionTemplateFl"/>
+    </widget>
+    <addaction name="menu_7"/>
+    <addaction name="actionGaussianFl"/>
+    <addaction name="actionMidFl"/>
+    <addaction name="actionBilateralFl"/>
+    <addaction name="actionUserDefined"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>图像增强</string>
+    </property>
+    <addaction name="actionSharpen"/>
+    <addaction name="actionConstIncrease"/>
+    <addaction name="actionColorReverse"/>
+   </widget>
+   <widget class="QMenu" name="menu_6">
+    <property name="title">
+     <string>图像分割</string>
+    </property>
+    <widget class="QMenu" name="menu_8">
+     <property name="title">
+      <string>边缘点检测</string>
+     </property>
+     <widget class="QMenu" name="menu_9">
+      <property name="title">
+       <string>梯度算子法</string>
+      </property>
+      <addaction name="actionQgradient"/>
+      <addaction name="actionRoberts"/>
+      <addaction name="actionPrewitt"/>
+      <addaction name="actionSobel"/>
+     </widget>
+     <widget class="QMenu" name="menu_10">
+      <property name="title">
+       <string>二阶导数算子法</string>
+      </property>
+      <addaction name="actionFourLaplacian"/>
+      <addaction name="actionEightLaplacian"/>
+      <addaction name="actionLogWay"/>
+     </widget>
+     <addaction name="menu_9"/>
+     <addaction name="menu_10"/>
+    </widget>
+    <addaction name="menu_8"/>
+    <addaction name="actionCropImage"/>
+   </widget>
+   <widget class="QMenu" name="menu_11">
+    <property name="title">
+     <string>项目</string>
+    </property>
+    <addaction name="actionPlateRecognition"/>
+   </widget>
+   <widget class="QMenu" name="menu_12">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionIntrotuce"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu_6"/>
+   <addaction name="menu_11"/>
+   <addaction name="menu_12"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionNew_file">
+   <property name="text">
+    <string>打开图片(N)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionTranslation">
+   <property name="text">
+    <string>平移</string>
+   </property>
+  </action>
+  <action name="actionZoom">
+   <property name="text">
+    <string>缩放</string>
+   </property>
+  </action>
+  <action name="actionRotate">
+   <property name="text">
+    <string>旋转</string>
+   </property>
+  </action>
+  <action name="actionGrayChange">
+   <property name="text">
+    <string>灰度变换</string>
+   </property>
+  </action>
+  <action name="actionGrayLevelav">
+   <property name="text">
+    <string>灰度直方图均衡化</string>
+   </property>
+  </action>
+  <action name="actionGrayLevelrule">
+   <property name="text">
+    <string>灰度直方图规定化</string>
+   </property>
+  </action>
+  <action name="actionGrayLevelRe">
+   <property name="text">
+    <string>灰度反转</string>
+   </property>
+  </action>
+  <action name="actionGrayBinaryzation">
+   <property name="text">
+    <string>灰度图像二值化</string>
+   </property>
+  </action>
+  <action name="actionAveFiltering">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+  </action>
+  <action name="actionActionAveFiltering">
+   <property name="text">
+    <string>actionAveFiltering</string>
+   </property>
+  </action>
+  <action name="actionFourAveFl">
+   <property name="text">
+    <string>四邻域均值滤波</string>
+   </property>
+  </action>
+  <action name="eight">
+   <property name="text">
+    <string>eightAveFl</string>
+   </property>
+  </action>
+  <action name="actionEightAveFl">
+   <property name="text">
+    <string>八邻域均值滤波</string>
+   </property>
+  </action>
+  <action name="actionTemplateFl">
+   <property name="text">
+    <string>10*10模板完全均值滤波</string>
+   </property>
+  </action>
+  <action name="actionGaussianFl">
+   <property name="text">
+    <string>高斯滤波5*5</string>
+   </property>
+  </action>
+  <action name="actionMidFl">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+  </action>
+  <action name="actionBilateralFl">
+   <property name="text">
+    <string>双边滤波</string>
+   </property>
+  </action>
+  <action name="actionUserDefined">
+   <property name="text">
+    <string>自定义滤波</string>
+   </property>
+  </action>
+  <action name="actionSharpen">
+   <property name="text">
+    <string>图像锐化</string>
+   </property>
+  </action>
+  <action name="actionConstIncrease">
+   <property name="text">
+    <string>对比度增强</string>
+   </property>
+  </action>
+  <action name="actionColorReverse">
+   <property name="text">
+    <string>颜色反转</string>
+   </property>
+  </action>
+  <action name="actionDegeDetection">
+   <property name="text">
+    <string>边缘点检测</string>
+   </property>
+  </action>
+  <action name="actionQgradient">
+   <property name="text">
+    <string>正交梯度模板法</string>
+   </property>
+  </action>
+  <action name="actionRoberts">
+   <property name="text">
+    <string>Roberts算子法</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="text">
+    <string>Prewitt平均差分法</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>soble加权平均法</string>
+   </property>
+  </action>
+  <action name="actionFourLaplacian">
+   <property name="text">
+    <string>四邻域Laplacian算子法</string>
+   </property>
+  </action>
+  <action name="actionEightLaplacian">
+   <property name="text">
+    <string>八邻域Laplacian算子法</string>
+   </property>
+  </action>
+  <action name="actionLogWay">
+   <property name="text">
+    <string>LoG算子法</string>
+   </property>
+  </action>
+  <action name="actionCropImage">
+   <property name="text">
+    <string>图像切割</string>
+   </property>
+  </action>
+  <action name="actionPlateRecognition">
+   <property name="text">
+    <string>车牌识别</string>
+   </property>
+  </action>
+  <action name="actionSavePicture">
+   <property name="text">
+    <string>保存图片</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionIntrotuce">
+   <property name="text">
+    <string>软件介绍</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
